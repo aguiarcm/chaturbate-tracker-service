@@ -7,6 +7,7 @@ import com.prismastudio.chaturbatetracker.repository.ChaturbateAccountRepository
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
 import java.time.LocalDateTime
+import java.util.*
 
 @Service
 class ChaturbateAccountHistoryService(
@@ -15,7 +16,8 @@ class ChaturbateAccountHistoryService(
         private val restTemplate: RestTemplate) {
 
     fun searchByUsernameAndLastBroadcastRange(username: String, startDate: LocalDateTime, endDate: LocalDateTime): List<ChaturbateAccountHistory> {
-        return chaturbateAccountHistoryRepository.findByUserNameAndLastBroadcastBetween(username, startDate, endDate)
+        //return chaturbateAccountHistoryRepository.findByUserNameAndLastBroadcastBetween(username, startDate, endDate)
+        return Collections.emptyList()
     }
 
     fun getChaturbateAccountHistoryList() : List<ChaturbateAccountHistory> {

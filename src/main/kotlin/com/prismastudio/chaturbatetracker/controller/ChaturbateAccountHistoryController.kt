@@ -3,6 +3,7 @@ package com.prismastudio.chaturbatetracker.controller
 import com.prismastudio.chaturbatetracker.entity.ChaturbateAccountHistory
 import com.prismastudio.chaturbatetracker.repository.ChaturbateAccountHistoryRepository
 import com.prismastudio.chaturbatetracker.service.ChaturbateAccountHistoryService
+import org.hibernate.internal.util.collections.CollectionHelper.listOf
 import org.springframework.format.annotation.DateTimeFormat
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 @RestController
 @RequestMapping("/chaturbate-history")
@@ -34,5 +36,4 @@ class ChaturbateAccountHistoryController (
     fun onDemand(): List<ChaturbateAccountHistory> {
         return chaturbateAccountHistoryService.getChaturbateAccountHistoryList()
     }
-
 }

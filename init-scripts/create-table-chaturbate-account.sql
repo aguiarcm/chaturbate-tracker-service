@@ -1,0 +1,5 @@
+CREATE TABLE chaturbate_account (
+uid INT PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR(255),
+url VARCHAR(255)
+);

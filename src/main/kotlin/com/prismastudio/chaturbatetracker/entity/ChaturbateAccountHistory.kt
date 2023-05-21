@@ -34,5 +34,5 @@ data class ChaturbateAccountHistory(
 
         @JsonProperty("last_broadcast")
         @Column(nullable = false)
-        val lastBroadcast : LocalDateTime
+        val lastBroadcast : String
 )

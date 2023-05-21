@@ -8,5 +8,5 @@ import java.time.LocalDateTime
 
 @Repository
 interface ChaturbateAccountHistoryRepository  : JpaRepository<ChaturbateAccountHistory, Long> {
-    fun findByUserNameAndLastBroadcastBetween(username: String, startDate: LocalDateTime, endDate: LocalDateTime): List<ChaturbateAccountHistory>
+    //fun findByUserNameAndLastBroadcastBetween(username: String, startDate: LocalDateTime, endDate: LocalDateTime): List<ChaturbateAccountHistory>
 }
