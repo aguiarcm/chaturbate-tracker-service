@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ChaturbateAccountRepository  : JpaRepository<ChaturbateAccount, Long> {
+    fun findByUserName(userName: String) : ChaturbateAccount?
 }

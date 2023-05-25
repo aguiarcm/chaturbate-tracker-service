@@ -1,5 +1,6 @@
 package com.prismastudio.chaturbatetracker.entity
 
+import com.prismastudio.chaturbatetracker.repository.ChaturbateAccountRepository
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -14,7 +15,7 @@ data class ChaturbateAccount(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val uid: Long? = null,
 
-        @Column(nullable = false)
+        @Column(nullable = false, unique = true)
         var userName: String,
 
         @Column(nullable = false)
