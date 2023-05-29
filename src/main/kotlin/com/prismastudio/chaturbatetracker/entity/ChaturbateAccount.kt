@@ -1,6 +1,6 @@
 package com.prismastudio.chaturbatetracker.entity
 
-import com.prismastudio.chaturbatetracker.repository.ChaturbateAccountRepository
+
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

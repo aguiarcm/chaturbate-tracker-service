@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
 	id("org.springframework.boot") version "3.1.0"
@@ -22,7 +23,6 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.apache.commons:commons-csv:1.10.0")
-//	implementation("ch.qos.logback:logback-classic:1.2.5") // Logging framework
 	implementation("io.github.microutils:kotlin-logging:3.0.5") // Kotlin logging librar
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -37,4 +37,10 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+tasks.withType<BootJar> {
+	mainClass.set("com.prismastudio.chaturbatetracker.ChaturbateTrackerApplication")
+	archiveFileName.set("chaturbateTrackerApp.jar")
+	archiveVersion.set("1.0.0")
+	destinationDirectory.set((file("build/deploy")))
 }
