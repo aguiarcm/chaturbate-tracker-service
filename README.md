@@ -41,3 +41,31 @@ curl --location 'localhost:8080/chaturbate-accounts' \
 "url" : "https://chaturbate.com/statsapi/?username=iwillgetyou1&token=KRe2q05pKmv163Dw3GjVH8qp"
 }'
 
+
+
+
+## Conexión por SSH desde Windows
+
+### Ejecutar permisos
+```icacls * /reset /t /c /q´´```
+
+
+```ssh -i "new-pem.pem" ec2-user@ec2-3-142-197-226.us-east-2.compute.amazonaws.com```
+
+### Instalar Java
+```
+sudo tee /etc/yum.repos.d/corretto.repo << EOF
+[corretto]
+name=Corretto
+baseurl=https://yum.corretto.aws/corretto/${corretto_version}/amazonlinux/latest/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.corretto.aws/corretto/${corretto_version}/amazonlinux/latest/jdk11u-latest-x86_64.rpm.sig
+EOF
+```
+```
+sudo yum install -y java-17-amazon-corretto-devel
+```
+
+### Mover jar a aws
+```scp -i "G:\Otros ordenadores\Mi PC\TODO PRISMA\Software\AWS\new-pem.pem" .\chaturbateTrackerApp.jar  ec2-user@ec2-3-142-197-226.us-east-2.compute.amazonaws.com:/home/ec2-user/chaturbate-service```
