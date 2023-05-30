@@ -13,7 +13,7 @@ class ChaturbateAccountHistoryScheduler (
         private val chaturbateAccountHistoryRepository: ChaturbateAccountHistoryRepository
 ) {
 
-    @Scheduled(cron = "1 * * * * *") // Run every minute
+    //@Scheduled(cron = "1 * * * * *") // Run every minute
     fun updateChaturbateAccountHistory() {
         val list = chaturbateAccountHistoryService.getChaturbateAccountHistoryList()
 

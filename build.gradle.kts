@@ -1,14 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
-
 plugins {
 	id("org.springframework.boot") version "3.1.0"
 	id("io.spring.dependency-management") version "1.1.0"
 	kotlin("jvm") version "1.8.21"
 	kotlin("plugin.spring") version "1.8.21"
 	kotlin("plugin.jpa") version "1.8.21"
-	id ("org.jetbrains.kotlin.jvm' version '1.4.32")
 	id ("application")
 }
 
@@ -42,8 +40,8 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-tasks.withType<BootJar> {
-	mainClass.set("com.prismastudio.chaturbatetracker.ChaturbateTrackerApplication")
+tasks.getByName<BootJar>("bootJar") {
+	mainClass.set("com.prismastudio.chaturbatetracker.ChaturbateTrackerApplicationKt")
 	archiveFileName.set("chaturbateTrackerApp.jar")
 	archiveVersion.set("1.0.0")
 	destinationDirectory.set((file("build/deploy")))
